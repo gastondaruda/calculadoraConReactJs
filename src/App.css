@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator-grid{
+  border: 2px solid red;
+  margin: 2rem 30rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  height: 80vh;
+  gap: 2px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.output{
+  border: 2px solid green;
+  grid-column: 1 / -1;
+  height: 8rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-right: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+button{
+  background-color: brown;
+  color: #fff;
+  border-radius: 10px;
+  height: 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid brown;
+  transition: .3s;
+}
+button:hover{
+  background-color: #eee;
+  color: brown;
+}
+.span2{
+  grid-column: span 2;
+}
+.current,
+.pre{
+  font-size: 2.5rem;
+
+}
+.current{
+  color: brown;
+  display: flex;
+  justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 769px) {
+  .calculator-grid{
+    margin: 0;
   }
 }
